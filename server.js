@@ -1,6 +1,6 @@
 var app = require("./app");
 var http = require("http");
-const PORTS = 7878;
+const PORTS = 80;
 
 var server = http.createServer(app);
 
