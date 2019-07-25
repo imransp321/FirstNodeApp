@@ -1,15 +1,12 @@
 var express = require("express");
+var path = require("path");
+var tasksRouter = require("./router/tasks");
 
 var app = express();
 
-let tasks = require("./data/tasks");
+app.set("view engine", "ejs");
 
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/public/index.html");
-});
-
-app.get("/tasks", function(req, res) {
-  res.json(tasks);
-});
+app.use("/tasks", tasksRouter);
+app.use(express.static(path.join(__dirname, "public")));
 
 module.exports = app;

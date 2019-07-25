@@ -1,0 +1,20 @@
+<%include ../shared/header %>
+<div class="container">
+  <div class="row">
+    <div class="col col-md-4">
+      <ul class="list-group">
+        <%for(const tasks of taskItems){%>
+        <li class="list-group-item">
+          <%=tasks.title%>
+          <a
+            href="/tasks/details/<%=tasks.id%>"
+            class="btn btn-primary float-right"
+            >Details</a
+          >
+        </li>
+        <%}%>
+      </ul>
+    </div>
+  </div>
+</div>
+<%include ../shared/footer %>

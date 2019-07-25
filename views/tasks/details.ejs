@@ -1,0 +1,30 @@
+<%include ../shared/header %>
+<div class="container">
+  <div class="row">
+    <div class="col col-md-4">
+      <%if(taskItems){%>
+      <div class="card-body">
+        <h5 class="card-title"><%= taskItems.title%></h5>
+        <p class="card-text">
+          <img
+            src="<%=taskItems.resourceURL%>"
+            alt="..."
+            height="200px"
+          /><br />
+          <%=taskItems.description%>
+        </p>
+      </div>
+      <%} else {%>
+      <p class="alert alert-info">Task not found</p>
+      <%}%>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <a href="/tasks/list">Back to Tasks</a>
+      </div>
+    </div>
+  </div>
+</div>
+<%include ../shared/footer %>
